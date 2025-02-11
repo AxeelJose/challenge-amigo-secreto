@@ -12,9 +12,21 @@ function agregarAmigo(){
         amigos.push(nombreAmigo);
         console.log(amigos);
         limpiarCaja();
+        agregarLista();
     }
 }
 
 function limpiarCaja() {
     document.getElementById('amigo').value = '';
+}
+
+function agregarLista(){
+    let listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = '';
+
+    for (let i = 0; i < amigos.length; i++) {
+        let li = document.createElement('li');
+        li.textContent = amigos[i];
+        listaAmigos.appendChild(li);
+    }
 }
